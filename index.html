@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Autoryzowany serwis urządzeń gastronomicznych Kromet. Naprawy urządzeń grzewczych w Gdyni i okolicach"/>
+    <meta name="theme-color" content="rgb(241, 239, 239)"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+    crossorigin="anonymous">
+
+    <!-- Mine CSS -->
+    <link href="index.css" rel="stylesheet">
+
+    <title>Serwis - Kromet | Gdynia</title>
+</head>
+<body>
+    <div class="container pt-2">
+        <div class="row">
+            <div class="pt-2 col-9">
+                <h1>P.H.U. Jędrek </h1> 
+                <p class='lead'>
+                    serwis urządzeń gastronomicznych
+                </p>
+            </div>
+            <div class="pt-2 col-3">
+                <div style="font-size: 1rem;">
+                    <b>Kontakt:</b><br>
+                    <b>Andrzej Miotke</b><br>
+                    <b>ul. Zielona 11B/5</b><br>
+                    <b>81-133 Gdynia</b><br>
+                    <b><a href="tel:+48601650361">601-650-361</a></b><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <img src="images/tlo.jpg" class="img-fluid" alt="Serwis w promieniu 100km od Gdyni">
+    </div>
+    <div  style="background-color: rgb(241, 239, 239);">
+        <div class="container pt-2">
+            <div class="row">
+                <div class="pt-2 col-12 col-md-6 order-md-2">
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h3 class="card-title">Certyfikat Kromet</h3>
+                            <div class="col-5 pb-2">
+                            <div data-toggle="modal" data-target="#myModal">
+                                <img src="images/certyfikat.jpg" width="50%" class="rounded float-end img-fluid img-thumbnail" role="button" alt="Certyfikat Kromet">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h3 class="card-title">Formularz kontaktowy</h3>
+                            <div id="send_form_status"></div>
+                            <form method="post" action="/send_form.php" id="contact_form">
+                                <div class="mb-1">
+                                    <label for="name" class="form-label">Imię</label>
+                                    <input class="form-control" type="text" name="name" id="name" required data-text-error="Wpisz imię">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="surname" class="form-label">Nazwisko</label>
+                                    <input class="form-control" type="text" name="surname" id="surname" required data-text-error="Wpisz nazwisko">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="phone" class="form-label">Telefon</label>
+                                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" required data-text-error="Wpisz poprawny numer telefonu">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="email" class="form-label">E-mail</label>
+                                    <input class="form-control" type="email" name="email" id="email" placeholder="email@przyklad.pl" required data-text-error="Wpisz poprawny email">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="message" class="form-label">Treść</label>
+                                    <textarea class="form-control" name="message" id="message" rows="4" required required data-text-error="Wpisz treść wiadomości"></textarea>
+                                </div>      
+                                <div class="mb-1">
+                                    <button id="sendBtn" type="submit" class="btn btn-danger">Wyślij</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-2 col-12 col-md-6 order-md-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Usługi</h3>
+                            <ul>
+                                <b><li>naprawy gwarancyjne i pogwarancyjne grzewczych urządzeń gastronomicznych</li></b>
+                                <br/>
+                                <b><li>sprzedarz bezpośrednia urządzeń firmy <a href="http://www.kromet.com.pl/site,pl,136,produkty.html">Kromet</a> - autoryzowany parter</li></b>
+                                <br>
+                                <li>serwis elektrycznych urzadzeń gastronomicznych (grzewczych) firm: Bertos, Fagor, MKM, Zanussi, Spomasz Białystok, Spomasz Nakło, Lozamet</li>
+                                <br/>
+                                <li>pomiary elektryczne</li>
+                                <br>
+                                <li>dojazd do 100km od Gdyni</li>
+                                <br>
+                                <li>współpraca z placówkami budżetowymi</li>
+                                <br>
+                                <li>duża i mała gastronomia, klienci indywidualni</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Certyfikat Kromet</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="images/certyfikat.jpg" class="img-fluid" alt="Certyfikat Kromet">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+            </div>
+          </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

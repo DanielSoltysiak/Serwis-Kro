@@ -1,0 +1,81 @@
+li {
+    font-size: 1.5rem;
+}
+
+a, .form-error-text  {
+    color: rgb(240, 0, 0);
+}
+
+textarea:invalid ,input:invalid {
+    border-color: red;
+    outline: none;
+    box-shadow: 0 0 2px red;
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity:0.5;
+}
+
+.loading::after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0,0,0,0.7);
+    transform: translate(-50%, -50%) rotate(0deg);
+    content:"";
+    animation: rotateSingleLoading 0.3s infinite linear;
+    z-index: 10;
+}
+
+@keyframes rotateSingleLoading {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.form .send-error {
+    display:inline-block;
+    font-family: sans-serif;
+    padding:1rem 2rem;
+    color:red;
+}
+
+@media screen and (max-width:500px) {
+    .form .send-error {
+        text-align:center;
+        display: block;
+    }
+}
+
+.form-send-success {
+    font-family: sans-serif;
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    border:1px solid #eee;
+    color:#333;
+    padding:10rem 0;
+    margin:3rem auto;
+    max-width:40rem;
+}
+
+.form-send-success strong {
+    display:block;
+    margin-bottom:0.5rem;
+}
+
+.form-send-success span {
+    font-size:1rem;
+    color:#888;
+    font-weight:normal;
+    display: block;
+}
