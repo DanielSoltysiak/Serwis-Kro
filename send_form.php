@@ -3,15 +3,23 @@
 $mailToSend = "jedrek@serwis-elektryczny.pl";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $name = $_POST["name"];
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $phone = $_POST["phone"];
     $email = $_POST["email"];
     $message = $_POST["message"];
 
     $errors = [];
 	$return = [];
 
-    if (empty($name)) { //jeżeli pusta wartość
-        array_push($errors, "name");
+    if (empty($fname)) { //jeżeli pusta wartość
+        array_push($errors, "fname");
+    }
+    if (empty($lname)) {
+        array_push($errors, "lname");
+    }
+    if (empty($phone)) {
+        array_push($errors, "phone");
     }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //sprawdzamy czy email ma zły wzór
         array_push($errors, "email");
@@ -34,7 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <meta charset=\"utf-8\">
                 </head>
                 <body>
-                    <div> Imię: $name</div>
+                    <div> Imię: $fname</div>
+                    <div> Nazwisko: $lname</div>
+                    <div> Telefon: $phone</div>
                     <div> Email: <a href=\"mailto:$email\">$email</a> </div>
                     <div> Wiadomość: </div>
                     <div> $message </div>
@@ -51,3 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("Content-Type: application/json");
     echo json_encode($return);
 }
+?>
