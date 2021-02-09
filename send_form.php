@@ -1,6 +1,6 @@
 <?php
 
-$mailToSend = "jedrek@serwis-elektryczny.pl";
+$mailToSend = "andrzejmiotke123@gmail.com";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fname = $_POST["fname"];
