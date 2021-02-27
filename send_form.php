@@ -34,8 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //każde wysłanie wiadomości musi być poprzedzone ustawieniem nagłówków
         $headers  = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/html; charset=UTF-8". "\r\n";
-        $headers .= "From: ".$email."\r\n";
-        $headers .= "Reply-to: ".$email;
         $message  = "
             <html>
                 <head>
@@ -51,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </body>
             </html>";
 
-        if (mail($mailToSend, "Wiadomość ze strony - " . date("d-m-Y"), $message, $headers)) {
+        if (mail($mailToSend, "PHU Jędrek - formularz kontaktowy" . date("d-m-Y"), $message, $headers)) {
             $return["status"] = "ok";
         } else {
             $return["status"] = "error";
