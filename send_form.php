@@ -1,6 +1,7 @@
 <?php
 
-$mailToSend = "andrzejmiotke123@gmail.com";
+$mailToSend = "jedrek@serwis-elektryczny.pl";
+$sender = "noreply@serwis-elektryczny.pl";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fname = $_POST["fname"];
@@ -34,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //każde wysłanie wiadomości musi być poprzedzone ustawieniem nagłówków
         $headers  = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/html; charset=UTF-8". "\r\n";
+        $headers .= "From: ".$sender."\r\n";
         $message  = "
             <html>
                 <head>
