@@ -1,6 +1,6 @@
 <?php
 
-$mailToSend = "jedrek@serwis-elektryczny.pl";
+$mailToSend = "";
 $sender = "noreply@serwis-elektryczny.pl";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
